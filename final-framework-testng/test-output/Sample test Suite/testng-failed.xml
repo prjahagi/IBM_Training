@@ -1,16 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Sample test Suite]">
-  <test name="Sample test(failed)">
+  <test thread-count="5" name="Sample test(failed)">
     <classes>
-      <class name="com.training.regression.tests.LoginDBTest">
+      <class name="com.training.functional.tests.AddNewRegion">
         <methods>
           <include name="tearDown"/>
-          <include name="loginDBTest"/>
-          <include name="setUp"/>
+          <include name="addNewRegion"/>
           <include name="setUpBeforeClass"/>
         </methods>
-      </class> <!-- com.training.regression.tests.LoginDBTest -->
+      </class> <!-- com.training.functional.tests.AddNewRegion -->
+      <class name="com.training.functional.tests.AddNewFeature">
+        <methods>
+          <include name="setUpBeforeClass"/>
+          <include name="addNewFeature"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.training.functional.tests.AddNewFeature -->
     </classes>
   </test> <!-- Sample test(failed) -->
 </suite> <!-- Failed suite [Sample test Suite] -->
