@@ -4,11 +4,11 @@
 <suite name = "Sample test Suite">
    <test name = "Sample test">
       <classes>
-         <class name = "com.training.functional.tests.MovePropertiesToTrash" />
-         <class name = "com.training.functional.tests.AddNewFeature" />
-         <class name = "com.training.functional.tests.DeleteFeature" />
-         <class name = "com.training.functional.tests.AddNewRegion" />
-         <class name = "com.training.functional.tests.DeleteRegion" />
+         <class name = "com.training.functional.tests.TC56_AddNewPost" />
+         <class name = "com.training.functional.tests.TC57_CreatePropertyWithNewFeature" />
+         <class name = "com.training.functional.tests.TC58_AdminReplyToCommentAddedByUser" />
+         <class name = "com.training.functional.tests.TC59_AddPropertyDetailsToTrash" />
+         <class name = "com.training.functional.tests.TC60_AddNewPropertyWithAllDetails" />
       </classes>
    </test>
 </suite>	
