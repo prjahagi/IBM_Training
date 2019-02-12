@@ -1,33 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="71644" started-at="2019-02-05T05:31:00Z" finished-at="2019-02-05T05:32:11Z">
+  <suite name="Default suite" duration-ms="225258" started-at="2019-02-12T09:24:36Z" finished-at="2019-02-12T09:28:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="71644" started-at="2019-02-05T05:31:00Z" finished-at="2019-02-05T05:32:11Z">
-      <class name="com.training.functional.tests.TC60_AddNewPropertyWithAllDetails">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.TC60_AddNewPropertyWithAllDetails@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="8" started-at="2019-02-05T05:31:00Z" finished-at="2019-02-05T05:31:00Z">
+    <test name="Default test" duration-ms="225258" started-at="2019-02-12T09:24:36Z" finished-at="2019-02-12T09:28:21Z">
+      <class name="com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="13" started-at="2019-02-12T09:24:36Z" finished-at="2019-02-12T09:24:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.functional.tests.TC60_AddNewPropertyWithAllDetails@42d80b78]" name="setUp" duration-ms="32873" started-at="2019-02-05T05:31:00Z" finished-at="2019-02-05T05:31:33Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="setUp" duration-ms="45360" started-at="2019-02-12T09:24:36Z" finished-at="2019-02-12T09:25:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.functional.tests.TC60_AddNewPropertyWithAllDetails@42d80b78]" name="validLoginTest" duration-ms="8765" started-at="2019-02-05T05:31:33Z" finished-at="2019-02-05T05:31:41Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="validLoginTest" duration-ms="14790" started-at="2019-02-12T09:25:21Z" finished-at="2019-02-12T09:25:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="AddNewPropertyWithAllDetails()[pri:2, instance:com.training.functional.tests.TC60_AddNewPropertyWithAllDetails@42d80b78]" name="AddNewPropertyWithAllDetails" duration-ms="28276" started-at="2019-02-05T05:31:41Z" finished-at="2019-02-05T05:32:10Z">
+        <test-method status="PASS" signature="addNewFeature()[pri:2, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="addNewFeature" duration-ms="11735" started-at="2019-02-12T09:25:36Z" finished-at="2019-02-12T09:25:47Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AddNewPropertyWithAllDetails -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.TC60_AddNewPropertyWithAllDetails@42d80b78]" name="tearDown" is-config="true" duration-ms="1701" started-at="2019-02-05T05:32:10Z" finished-at="2019-02-05T05:32:11Z">
+        </test-method> <!-- addNewFeature -->
+        <test-method status="PASS" signature="CreateNewProperty()[pri:3, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="CreateNewProperty" duration-ms="21436" started-at="2019-02-12T09:25:47Z" finished-at="2019-02-12T09:26:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateNewProperty -->
+        <test-method status="PASS" signature="SearchPropertyOnHomePage()[pri:4, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="SearchPropertyOnHomePage" duration-ms="130185" started-at="2019-02-12T09:26:09Z" finished-at="2019-02-12T09:28:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SearchPropertyOnHomePage -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="tearDown" is-config="true" duration-ms="1708" started-at="2019-02-12T09:28:19Z" finished-at="2019-02-12T09:28:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.functional.tests.TC60_AddNewPropertyWithAllDetails -->
+      </class> <!-- com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

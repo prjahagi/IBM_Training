@@ -8,6 +8,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +23,11 @@ import com.training.pom.DashboardPOM;
 import com.training.pom.LoginPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
+
+/* Author               :   Prachi Jahagirdar
+ * Test Case ID         :   RETC_058
+ * Test Case Description:   To verify whether application allows admin to reply for the comment added by user   
+ */
 
 public class TC58_AdminReplyToCommentAddedByUser {
 	private WebDriver driver;
@@ -47,6 +53,7 @@ public class TC58_AdminReplyToCommentAddedByUser {
 		driver.quit();
 	}
 	
+	//To perform the initial browser setup
 	@Test(priority=0)
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
@@ -62,6 +69,7 @@ public class TC58_AdminReplyToCommentAddedByUser {
 		screenShot.captureScreenShot("TC58_01_URL Opening");
 	}
 	
+	//To Login on Real Estate Web site	
 	@Test(priority=1)
 	public void validLoginTest() {
 		loginPOM.sendUserName("PrachiTest");
@@ -70,9 +78,11 @@ public class TC58_AdminReplyToCommentAddedByUser {
 		screenShot.captureScreenShot("TC58_02_URL Login Successful");
 	}
 	
+	//Add comment on Admin post with user login
 	@Test(priority=2)
-	public void AddCommentOnPost() throws AWTException, InterruptedException {
+	public void AddCommentOnPost() throws AWTException {
 		blogtabPOM.clickOnBlogTabLink();
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		dashboardPOM.scrollDown();
 		screenShot.captureScreenShot("TC58_03_Blog Page displayed");
 		blogtabPOM.clickOnReadMoreLink();
@@ -90,6 +100,7 @@ public class TC58_AdminReplyToCommentAddedByUser {
 		screenShot.captureScreenShot("TC58_07_Logged out successfully");
 	}
 	
+	//Open new window/tab and login with admin credentials
 	@Test(priority=3)
 	public void OpenNewWindowAndLogin() {
 		((JavascriptExecutor) driver).executeScript("window.open()");
@@ -103,18 +114,18 @@ public class TC58_AdminReplyToCommentAddedByUser {
 		screenShot.captureScreenShot("TC58_09_Logged in as Admin successfully");
 	}
 	
+	//To reply on comment added by user with admin credentials
 	@Test(priority=4)
-	public void ReplyToComment() throws InterruptedException {
+	public void ReplyToComment() {
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		dashboardPOM.clickCommentsLink();
 		int expected=2;
 		screenShot.captureScreenShot("TC58_10_comments added for the post displayed");
 		commentsPOM.mouseOverFirstComment();
-		Thread.sleep(1000);
 		commentsPOM.clickOnCommentReplyLink();
 		commentsPOM.enterReplyInTextBox("TESTEDREPLY");
 		screenShot.captureScreenShot("TC58_11_Reply comment added in reply text box");
 		commentsPOM.clickReplyButton();
-		Thread.sleep(3000);
 		driver.navigate().refresh();
 		int actual=commentsPOM.getCountInCommentResponseIcon();
 		assertEquals(actual, expected);

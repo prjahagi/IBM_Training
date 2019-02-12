@@ -3,8 +3,8 @@ package com.training.functional.tests;
 import com.training.generics.ScreenShot;
 import com.training.pom.LoginPOM;
 import com.training.pom.PropertiesPOM;
+import com.training.pom.RegionsPOM;
 import com.training.pom.DashboardPOM;
-import com.training.pom.FeaturesPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 import org.openqa.selenium.WebDriver;
@@ -18,17 +18,16 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 
-public class DeleteFeature {
+public class TC29_AddNewRegion {
   
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
 	private DashboardPOM dashboardPOM;
 	private PropertiesPOM propertiesPOM;
-	private FeaturesPOM featuresPOM;
+	private RegionsPOM regionsPOM;
 	private static Properties properties;
-	private ScreenShot screenShot;
-	
+	private ScreenShot screenShot;	
 	
   @BeforeClass
   public static void setUpBeforeClass() throws IOException {
@@ -49,12 +48,12 @@ public class DeleteFeature {
 		loginPOM = new LoginPOM(driver); 
 		dashboardPOM = new DashboardPOM(driver);
 		propertiesPOM= new PropertiesPOM(driver);
-		featuresPOM =new FeaturesPOM(driver);
+		regionsPOM =new RegionsPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
-		screenShot.captureScreenShot("TC28_1_URL Opening");
+		screenShot.captureScreenShot("TC29_1_URL Opening");
 	}
 	
 	@Test(priority=1)
@@ -63,23 +62,29 @@ public class DeleteFeature {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("TC28_2_Login Successful");
+		screenShot.captureScreenShot("TC29_2_Login Successful");
 	}
 	
 	@Test(priority=2)
-	public void deleteFeature() throws InterruptedException {
+	public void addNewRegion() throws InterruptedException {
 		dashboardPOM.clickPropertiesLink();
-		propertiesPOM.clickFeaturesLink();
-		screenShot.captureScreenShot("TC28_3_Feature Screen Opened");
-		featuresPOM.searchFeature("featuretest123");
-		featuresPOM.clickFeatureCheckbox();
-		featuresPOM.clickOnBulkActionList();
-		featuresPOM.selectMoveToDelete();
-		screenShot.captureScreenShot("TC28_4_Feature Selected to Delete");
-		featuresPOM.clickApplyButton();
-		Thread.sleep(2000);
-		assertTrue(featuresPOM.checkFeatureDeletedMessageDisplayed());
-		assertTrue(featuresPOM.checkNoCategoriesFoundMessageDisplayed());
-		screenShot.captureScreenShot("TC28_5_Feature Deleted");		
+		propertiesPOM.clickRegionsLink();
+		screenShot.captureScreenShot("TC29_3_Region Screen Opened");
+		String regionName="regiontest123";
+		regionsPOM.enterDataInRegionNameTextbox(regionName);
+		regionsPOM.enterDataInRegionSlugbox("bookingtest");
+		regionsPOM.selectNoneInParentRegion();
+		regionsPOM.enterDetailsInRegionDescription("test tc");
+		screenShot.captureScreenShot("TC29_4_Region Details entered");
+		regionsPOM.clickAddNewRegionButton();
+		regionsPOM.scrollScreenToSearchBox();
+		Thread.sleep(3000);
+		screenShot.captureScreenShot("TC29_5_Scroll up");
+		assertTrue(regionsPOM.checkRegionAddedMessageDisplayed());
+		regionsPOM.searchRegion(regionName);
+		String actualResult=regionsPOM.returnlabelforFirstRowFromList();		
+		assertTrue(actualResult.contains(regionName));
+		screenShot.captureScreenShot("TC29_6_Region Added");
 	}
+	
 }

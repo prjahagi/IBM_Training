@@ -139,4 +139,8 @@ public class RegionsPOM {
 			return false;
 		}
 	}
+	public void selectParentRegion(String parentRegion) {
+		Select list= new Select(this.parentRegionBox);
+		list.selectByVisibleText(parentRegion);		
+	}
 }

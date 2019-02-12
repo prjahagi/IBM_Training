@@ -19,7 +19,7 @@ import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 
 
-public class MovePropertiesToTrash {
+public class TC26_MovePropertiesToTrash {
 	
 	private WebDriver driver;
 	private String baseUrl;

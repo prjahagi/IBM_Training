@@ -3,8 +3,8 @@ package com.training.functional.tests;
 import com.training.generics.ScreenShot;
 import com.training.pom.LoginPOM;
 import com.training.pom.PropertiesPOM;
+import com.training.pom.RegionsPOM;
 import com.training.pom.DashboardPOM;
-import com.training.pom.FeaturesPOM;
 import com.training.utility.DriverFactory;
 import com.training.utility.DriverNames;
 import org.openqa.selenium.WebDriver;
@@ -18,16 +18,17 @@ import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.AfterClass;
 
-public class AddNewFeature {
+public class TC30_DeleteRegion {
   
 	private WebDriver driver;
 	private String baseUrl;
 	private LoginPOM loginPOM;
 	private DashboardPOM dashboardPOM;
 	private PropertiesPOM propertiesPOM;
-	private FeaturesPOM featuresPOM;
+	private RegionsPOM regionsPOM;
 	private static Properties properties;
-	private ScreenShot screenShot;	
+	private ScreenShot screenShot;
+	
 	
   @BeforeClass
   public static void setUpBeforeClass() throws IOException {
@@ -48,12 +49,12 @@ public class AddNewFeature {
 		loginPOM = new LoginPOM(driver); 
 		dashboardPOM = new DashboardPOM(driver);
 		propertiesPOM= new PropertiesPOM(driver);
-		featuresPOM =new FeaturesPOM(driver);
+		regionsPOM =new RegionsPOM(driver);
 		baseUrl = properties.getProperty("baseURL");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
-		screenShot.captureScreenShot("TC27_1_URL Opening");
+		screenShot.captureScreenShot("TC30_1_URL Opening");
 	}
 	
 	@Test(priority=1)
@@ -62,27 +63,23 @@ public class AddNewFeature {
 		loginPOM.sendUserName("admin");
 		loginPOM.sendPassword("admin@123");
 		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("TC27_2_Login Successful_Dashboard Opened");
+		screenShot.captureScreenShot("TC30_2_Login Successful");
 	}
 	
 	@Test(priority=2)
-	public void addNewFeature() throws InterruptedException {
+	public void deleteRegion() throws InterruptedException {
 		dashboardPOM.clickPropertiesLink();
-		propertiesPOM.clickFeaturesLink();
-		screenShot.captureScreenShot("TC27_3_Feature Screen Opened");
-		String featureName="featuretest123";
-		featuresPOM.enterDataInFeatureNameTextbox(featureName);
-		featuresPOM.enterDataInFeatureSlugbox("bookingtest");
-		featuresPOM.enterDetailsInFeatureDescription("test tc");
-		screenShot.captureScreenShot("TC27_4_Feature Details entered");
-		featuresPOM.clickAddNewFeatureButton();
-		featuresPOM.scrollScreenToSearchBox();
-		Thread.sleep(3000);
-		screenShot.captureScreenShot("TC27_5_Scroll up");
-		assertTrue(featuresPOM.checkFeatureAddedMessageDisplayed());
-		featuresPOM.searchFeature(featureName);
-		String actualResult=featuresPOM.returnlabelforFirstRowFromList();		
-		assertTrue(actualResult.contains(featureName));
-		screenShot.captureScreenShot("TC27_6_Feature Added");
+		propertiesPOM.clickRegionsLink();
+		screenShot.captureScreenShot("TC30_3_Region Screen Opened");
+		regionsPOM.searchRegion("regiontest123");
+		regionsPOM.clickRegionCheckbox();
+		regionsPOM.clickOnBulkActionList();
+		regionsPOM.selectMoveToDelete();
+		screenShot.captureScreenShot("TC30_4_Region Selected to Delete");
+		regionsPOM.clickApplyButton();
+		Thread.sleep(2000);
+		assertTrue(regionsPOM.checkRegionDeletedMessage());
+		assertTrue(regionsPOM.checkNoCategoriesFoundMessageDisplayed());
+		screenShot.captureScreenShot("TC30_5_Region Deleted");		
 	}
 }

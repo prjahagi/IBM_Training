@@ -19,7 +19,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
  *      access.
  */
 public class ApachePOIExcelRead {
-	public  String [][] getExcelContent(String fileName) {
+	public  String [][] getExcelContent(String fileName, String sheetName) {
 		int rowCount =0; 
 		String [][] list1 = null; 
 		
@@ -31,18 +31,21 @@ public class ApachePOIExcelRead {
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
 
 			// Get first/desired sheet from the workbook
-			XSSFSheet sheet = workbook.getSheetAt(0);
+			//XSSFSheet sheet = workbook.getSheetAt(0);
+			XSSFSheet sheet = workbook.getSheet(sheetName);
 			
-			int rowTotal = sheet.getLastRowNum();
-
+			int rowTotal = sheet.getLastRowNum()-1;
+			
+			
 			if ((rowTotal > 0) || (sheet.getPhysicalNumberOfRows() > 0)) {
 			    rowTotal++;
-			}
-			
+			}			
 			
 			// Iterate through each rows one by one
 			Iterator<Row> rowIterator = sheet.iterator();
-			 list1 = new String[rowTotal][2];
+			 list1 = new String[rowTotal][1];
+			
+			Row row1 = rowIterator.next();
 			 
 			while (rowIterator.hasNext()) {
 				Row row = rowIterator.next();
@@ -68,32 +71,31 @@ public class ApachePOIExcelRead {
 						break;
 					case Cell.CELL_TYPE_STRING:
 						if(cell.getStringCellValue()!=null){
-							tempList1[cellCount] =cell.getStringCellValue();
+							tempList1[cellCount] =cell.getStringCellValue();							
 						}
 						break;
 					}
 					cellCount ++; 
-				}
+				}				
 				if(tempList1 != null){
 					list1[rowCount++] = tempList1;
 				}
-			}
-		
-			
+				
+			}			
 			file.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
 		return list1;
 	}
 
+	
 	public static void main(String[] args) {
-		String fileName = "C:/Users/Naveen/Desktop/Testing.xlsx";
-		
-		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName)){
+		String fileName = "C:\\Users\\PrachiJahagirdar\\Documents\\screenshots\\Selenium_DataSheet.xlsx";
+		String sheetName="Region";
+		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName, sheetName)){
 			for(String  tt : temp){
-				System.out.println(tt);
+				System.out.println(tt);  
 			}
 		}
 

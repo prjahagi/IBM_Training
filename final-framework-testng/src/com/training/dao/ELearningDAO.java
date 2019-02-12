@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Properties;
 
 import com.training.bean.LoginBean;
+import com.training.bean.RealEstateBean;
 import com.training.connection.GetConnection;
 import com.training.utility.LoadDBDetails;
 
@@ -43,7 +44,16 @@ public class ELearningDAO {
 				LoginBean temp = new LoginBean(); 
 				temp.setUserName(gc.rs1.getString(1));
 				temp.setPassword(gc.rs1.getString(2));
-
+				
+				/*RealEstateBean temp1= new RealEstateBean();
+				temp1.setRegionName(gc.rs1.getString(1));
+				temp1.setRegionSlug(gc.rs1.getString(2));
+				temp1.setParentRegion(gc.rs1.getString(3));
+				temp1.setRegionDescription(gc.rs1.getString(4));
+				list.add(temp1);
+				*/
+				
+				
 				list.add(temp); 
 				
 			}

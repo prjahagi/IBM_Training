@@ -1,7 +1,6 @@
 package com.training.functional.tests;
 
 import org.testng.annotations.Test;
-
 import com.training.generics.ScreenShot;
 import com.training.pom.DashboardPOM;
 import com.training.pom.LoginPOM;
@@ -17,9 +16,15 @@ import static org.testng.Assert.assertTrue;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterClass;
+
+/* Author               :   Prachi Jahagirdar
+ * Test Case ID         :   RETC_056
+ * Test Case Description:   To verify whether application displays details of post added in Activity section of Dashboard. *   
+ */
 
 public class TC56_AddNewPost {
 	private WebDriver driver;
@@ -43,7 +48,8 @@ public class TC56_AddNewPost {
 		driver.quit();
 	}
   
-  @Test(priority=0)
+  	//To perform the initial browser setup
+  	@Test(priority=0)
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
@@ -55,7 +61,8 @@ public class TC56_AddNewPost {
 		driver.get(baseUrl);
 		screenShot.captureScreenShot("TC56_1_URL Opening");
 	}
-	
+  
+  	//To Login on Real Estate Web site	
 	@Test(priority=1)
 	public void validLoginTest() {
 		loginPOM.sendUserName("admin");
@@ -64,9 +71,11 @@ public class TC56_AddNewPost {
 		screenShot.captureScreenShot("TC56_2_Login Successful_Dashboard Opened");
 	}
 	
+	//Add new Post and validate on Dashboard if its published.
 	@Test(priority=2)
 	public void addNewPost() throws InterruptedException { 
 		String postName="New launch-post13";
+		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		dashboardPOM.mouseOverPostsLink();
 		dashboardPOM.clickOnAddNewPostLink();
 		screenShot.captureScreenShot("TC56_3_Add New Post screen opened");
@@ -76,7 +85,6 @@ public class TC56_AddNewPost {
 		driver.switchTo().defaultContent();
 		Thread.sleep(2000);
 		postsPOM.clickOnPublishButton();
-		Thread.sleep(2000);
 		assertTrue(postsPOM.checkPostPublishedMessageDisplayed());
 		screenShot.captureScreenShot("TC56_4_Post published");
 		postsPOM.clickOnDashboardIcon();

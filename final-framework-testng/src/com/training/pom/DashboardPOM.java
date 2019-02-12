@@ -36,6 +36,15 @@ public class DashboardPOM {
 	@FindBy(xpath="//div[contains(@class,'wp-menu-image dashicons-before dashicons-admin-comments')]")
 	private WebElement commentsLink;	
 	
+	@FindBy(xpath="//a[contains(text(),'Howdy,')]")
+	private WebElement userLoggedInLink;
+	
+	@FindBy(xpath="//a[@class='ab-item'][contains(text(),'Log Out')]")
+	private WebElement logoutLink;
+	
+	@FindBy(xpath="//a[contains(text(),'log out')]")
+	private WebElement logoutConfirmationLink;
+	
 	public void clickPropertiesLink() {
 		this.propertiesLink.click();
 	}	
@@ -68,6 +77,16 @@ public class DashboardPOM {
 	}
 	public void clickCommentsLink() {
 		this.commentsLink.click();
+	}
+	public void mouseOverUserLoggedInLink() {
+		Actions action=new Actions(this.driver);
+		action.moveToElement(this.userLoggedInLink).build().perform();
+	}
+	public void clickLogoutLink() {
+		this.logoutLink.click();
+	}
+	public void clickLogoutConfirmationLink() {
+		this.logoutConfirmationLink.click();
 	}
 	
 }
