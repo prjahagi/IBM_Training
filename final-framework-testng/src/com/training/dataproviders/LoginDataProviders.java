@@ -27,21 +27,6 @@ public class LoginDataProviders {
 			result[count ++] = obj; 
 		}
 		
-		/*List<RealEstateBean> list=new ELearningDAO().getLogins();
-		
-		Object[][] result=new Object[list.size()][];
-		int count=0;
-		for(RealEstateBean temp:list){
-			Object[] obj=new Object[4];
-			obj[0]=temp.getRegionName();
-			obj[1]=temp.getRegionSlug();
-			obj[2]=temp.getParentRegion();
-			obj[3]=temp.getRegionDescription();
-			
-			result[count ++] = obj; 
-		}
-		*/	
-		
 		return result;
 	}
 	

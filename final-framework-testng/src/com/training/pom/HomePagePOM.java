@@ -44,7 +44,8 @@ public class HomePagePOM {
 		String start="//h2[contains(text(),'";
 		String end="')]";
 		String CompleteXpath=start+propertyName+end;
-		return this.driver.findElement(By.xpath(CompleteXpath)).isDisplayed();		
+		return this.driver.findElement(By.xpath(CompleteXpath)).isDisplayed();	
+		
 	}
-
+	
 }

@@ -14,6 +14,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.training.dataproviders.LoginDataProviders;
+import com.training.dataproviders.RealEstateDataProvider;
 import com.training.generics.ScreenShot;
 import com.training.pom.DashboardPOM;
 import com.training.pom.LoginPOM;
@@ -35,7 +36,10 @@ public class TC86_AddNewRegionandCheckInDB {
 	private RegionsPOM regionsPOM;
 	private static Properties properties;
 	private ScreenShot screenShot;	
-	String regionName;
+	private String regionName;
+	private String regionSlug;
+	private String parentRegion;
+	private String regionDescription;
 	
 	@BeforeClass
 	public static void setUpBeforeClass() throws IOException {
@@ -79,11 +83,14 @@ public class TC86_AddNewRegionandCheckInDB {
 		dashboardPOM.clickPropertiesLink();
 		propertiesPOM.clickRegionsLink();
 		screenShot.captureScreenShot("TC86_3_Region Screen Opened");
-		regionName="regiontest123";
-		regionsPOM.enterDataInRegionNameTextbox(regionName);
+		regionsPOM.enterDataInRegionNameTextbox("regiontest123");
+		regionName=regionsPOM.getRegionNameTextBox();
 		regionsPOM.enterDataInRegionSlugbox("bookingtest");
+		regionSlug=regionsPOM.getRegionSlugTextBox();
 		regionsPOM.selectNoneInParentRegion();
+		parentRegion=regionsPOM.getParentRegionDropdown();
 		regionsPOM.enterDetailsInRegionDescription("test tc");
+		regionDescription=regionsPOM.getRegionDescription();
 		screenShot.captureScreenShot("TC86_4_Region Details entered");
 		regionsPOM.clickAddNewRegionButton();
 		regionsPOM.scrollScreenToSearchBox();
@@ -93,8 +100,12 @@ public class TC86_AddNewRegionandCheckInDB {
 		screenShot.captureScreenShot("TC86_5_Region Added");
 	}
 	
-	@Test(priority=3,dataProvider = "db-inputs", dataProviderClass = LoginDataProviders.class)
+	//To compare created region details from real estate website and region table from db.
+	@Test(priority=3,dataProvider = "db-inputs", dataProviderClass = RealEstateDataProvider.class)
 	public void checkRegionInDB(String regionNameDB, String regionSlugDB,String parentRegionDB, String regionDescriptionDB) {
 		assertEquals(regionNameDB, regionName);
+		assertEquals(regionSlugDB, regionSlug);
+		assertEquals(parentRegionDB, parentRegion);
+		assertEquals(regionDescriptionDB, regionDescription);
 	}
 }

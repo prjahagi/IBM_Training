@@ -34,7 +34,7 @@ public class ApachePOIExcelRead {
 			//XSSFSheet sheet = workbook.getSheetAt(0);
 			XSSFSheet sheet = workbook.getSheet(sheetName);
 			
-			int rowTotal = sheet.getLastRowNum()-1;
+			int rowTotal = sheet.getLastRowNum();
 			
 			
 			if ((rowTotal > 0) || (sheet.getPhysicalNumberOfRows() > 0)) {
@@ -45,7 +45,7 @@ public class ApachePOIExcelRead {
 			Iterator<Row> rowIterator = sheet.iterator();
 			 list1 = new String[rowTotal][1];
 			
-			Row row1 = rowIterator.next();
+			//Row row1 = rowIterator.next();
 			 
 			while (rowIterator.hasNext()) {
 				Row row = rowIterator.next();

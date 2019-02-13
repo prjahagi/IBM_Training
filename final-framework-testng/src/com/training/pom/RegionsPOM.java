@@ -62,9 +62,15 @@ public class RegionsPOM {
 		this.regionsName.clear();
 		this.regionsName.sendKeys(regionName);
 	}
+	public String getRegionNameTextBox() {
+		return this.regionsName.getAttribute("value");		
+	}
 	public void enterDataInRegionSlugbox(String regionslug) {
 		this.regionsSlug.clear();
 		this.regionsSlug.sendKeys(regionslug);
+	}
+	public String getRegionSlugTextBox() {
+		return this.regionsSlug.getAttribute("value");
 	}
 	public void clickOnParentRegionList() {
 		this.parentRegionBox.click();
@@ -73,9 +79,16 @@ public class RegionsPOM {
 		Select list= new Select(this.parentRegionBox);
 		list.selectByVisibleText("None");	
 	}
+	public String getParentRegionDropdown() {
+		Select list= new Select(this.parentRegionBox);
+		return list.getFirstSelectedOption().getText();
+	}
 	public void enterDetailsInRegionDescription(String regionDescription) {
 		this.regionsDescription.clear();
 		this.regionsDescription.sendKeys(regionDescription);
+	}
+	public String getRegionDescription() {
+		return this.regionsDescription.getAttribute("value");
 	}
 	public void clickAddNewRegionButton() {
 		this.addNewRegionButton.click();
@@ -143,4 +156,5 @@ public class RegionsPOM {
 		Select list= new Select(this.parentRegionBox);
 		list.selectByVisibleText(parentRegion);		
 	}
+	
 }
