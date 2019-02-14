@@ -98,8 +98,9 @@ public class TC87_CreatePropertyWithNewFeature_DataProvider {
 		propertiesPOM.clickNewFeatureCheckbox(featureName);
 		screenShot.captureScreenShot("TC87_06_property details entered and selected feature");
 		driver.switchTo().defaultContent();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		propertiesPOM.clickOnPublishButton();
+		Thread.sleep(3000);
 		screenShot.captureScreenShot("TC87_07_property Added");
 		assertTrue(propertiesPOM.checkPropertyPublishedMessageDisplayed());
 	}

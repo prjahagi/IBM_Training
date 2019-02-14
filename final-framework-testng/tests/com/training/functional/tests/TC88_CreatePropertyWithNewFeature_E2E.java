@@ -105,8 +105,9 @@ public class TC88_CreatePropertyWithNewFeature_E2E {
 		propertiesPOM.clickNewFeatureCheckbox(featureName);
 		screenShot.captureScreenShot("TC88_06_property details entered and selected feature");
 		driver.switchTo().defaultContent();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		propertiesPOM.clickOnPublishButton();
+		Thread.sleep(3000);
 		screenShot.captureScreenShot("TC88_07_property Added");
 		assertTrue(propertiesPOM.checkPropertyPublishedMessageDisplayed());
 	}

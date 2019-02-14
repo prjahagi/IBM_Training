@@ -3,13 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.training.functional.tests.TC59_AddPropertyDetailsToTrash">
+      <class name="com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider">
         <methods>
-          <include name="setUpBeforeClass"/>
-          <include name="AddPropertyToTrash"/>
           <include name="tearDown"/>
+          <include name="setUpBeforeClass"/>
+          <include name="CreateNewProperty" invocation-numbers="1 2"/>
         </methods>
-      </class> <!-- com.training.functional.tests.TC59_AddPropertyDetailsToTrash -->
+      </class> <!-- com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -105,8 +105,9 @@ public class TC57_CreatePropertyWithNewFeature {
 		propertiesPOM.clickNewFeatureCheckbox();
 		screenShot.captureScreenShot("TC57_6_property details entered and selected feature");
 		driver.switchTo().defaultContent();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		propertiesPOM.clickOnPublishButton();
+		Thread.sleep(3000);
 		screenShot.captureScreenShot("TC57_7_property Added");
 		assertTrue(propertiesPOM.checkPropertyPublishedMessageDisplayed());
 	}

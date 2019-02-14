@@ -74,7 +74,7 @@ public class TC60_AddNewPropertyWithAllDetails {
 	
 	//Add New property on Real estate with all the details of property
 	@Test(priority=2)
-	public void AddNewPropertyWithAllDetails () throws AWTException {
+	public void AddNewPropertyWithAllDetails () throws AWTException, InterruptedException {
 		String propertyName="New property detailed";
 		driver.manage().timeouts().implicitlyWait(3,TimeUnit.SECONDS);
 		propertiesPOM.mouseOverPropertiesIcon();
@@ -114,7 +114,9 @@ public class TC60_AddNewPropertyWithAllDetails {
 		dashboardPOM.scrollUp();
 		dashboardPOM.scrollUp();
 		driver.switchTo().defaultContent();
+		Thread.sleep(3000);
 		propertiesPOM.clickOnPublishButton();
+		Thread.sleep(3000);
 		assertTrue(propertiesPOM.checkPropertyPublishedMessageDisplayed());
 		screenShot.captureScreenShot("TC60_9_Property Published");
 	}

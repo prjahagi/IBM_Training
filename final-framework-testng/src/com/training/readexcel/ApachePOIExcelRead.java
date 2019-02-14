@@ -3,6 +3,7 @@ package com.training.readexcel;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.Iterator;
+import java.util.Properties;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -91,8 +92,8 @@ public class ApachePOIExcelRead {
 
 	
 	public static void main(String[] args) {
-		String fileName = "C:\\Users\\PrachiJahagirdar\\Documents\\screenshots\\Selenium_DataSheet.xlsx";
-		String sheetName="Region";
+		String fileName = "./resources/Selenium_DataSheet.xlsx";
+		String sheetName="Feature";
 		for(String [] temp : new ApachePOIExcelRead().getExcelContent(fileName, sheetName)){
 			for(String  tt : temp){
 				System.out.println(tt);  

@@ -1,41 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="8" passed="8">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="225258" started-at="2019-02-12T09:24:36Z" finished-at="2019-02-12T09:28:21Z">
+  <suite name="Default suite" duration-ms="192460" started-at="2019-02-14T07:11:06Z" finished-at="2019-02-14T07:14:19Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="225258" started-at="2019-02-12T09:24:36Z" finished-at="2019-02-12T09:28:21Z">
-      <class name="com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="setUpBeforeClass" is-config="true" duration-ms="13" started-at="2019-02-12T09:24:36Z" finished-at="2019-02-12T09:24:36Z">
+    <test name="Default test" duration-ms="192460" started-at="2019-02-14T07:11:06Z" finished-at="2019-02-14T07:14:19Z">
+      <class name="com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider">
+        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="setUpBeforeClass" is-config="true" duration-ms="16" started-at="2019-02-14T07:11:06Z" finished-at="2019-02-14T07:11:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="setUp" duration-ms="45360" started-at="2019-02-12T09:24:36Z" finished-at="2019-02-12T09:25:21Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="setUp" duration-ms="53352" started-at="2019-02-14T07:11:06Z" finished-at="2019-02-14T07:12:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="validLoginTest" duration-ms="14790" started-at="2019-02-12T09:25:21Z" finished-at="2019-02-12T09:25:36Z">
+        <test-method status="PASS" signature="validLoginTest()[pri:1, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="validLoginTest" duration-ms="54990" started-at="2019-02-14T07:12:00Z" finished-at="2019-02-14T07:12:55Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validLoginTest -->
-        <test-method status="PASS" signature="addNewFeature()[pri:2, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="addNewFeature" duration-ms="11735" started-at="2019-02-12T09:25:36Z" finished-at="2019-02-12T09:25:47Z">
+        <test-method status="PASS" signature="addNewFeature(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="addNewFeature" duration-ms="13138" started-at="2019-02-14T07:12:55Z" data-provider="TC87_Data" finished-at="2019-02-14T07:13:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Diamond Apartments]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[launch]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[New Launches of vilas, apartments, flats]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Diamond Property]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[flat]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addNewFeature -->
-        <test-method status="PASS" signature="CreateNewProperty()[pri:3, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="CreateNewProperty" duration-ms="21436" started-at="2019-02-12T09:25:47Z" finished-at="2019-02-12T09:26:09Z">
+        <test-method status="PASS" signature="addNewFeature(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="addNewFeature" duration-ms="7262" started-at="2019-02-14T07:13:09Z" data-provider="TC87_Data" finished-at="2019-02-14T07:13:16Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mana Apartments 1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[launch]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[New Launches of vilas, apartments, flats]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Mana Property]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[best]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewFeature -->
+        <test-method status="PASS" signature="addNewFeature(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="addNewFeature" duration-ms="7442" started-at="2019-02-14T07:13:16Z" data-provider="TC87_Data" finished-at="2019-02-14T07:13:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Brigade Apartments 1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[post sale]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[New flats for sale]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Brigade Property]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[orion mall]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addNewFeature -->
+        <test-method status="PASS" signature="CreateNewProperty(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="CreateNewProperty" duration-ms="23995" started-at="2019-02-14T07:13:23Z" data-provider="TC87_Data" finished-at="2019-02-14T07:13:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Diamond Apartments]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[launch]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[New Launches of vilas, apartments, flats]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Diamond Property]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[flat]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CreateNewProperty -->
-        <test-method status="PASS" signature="SearchPropertyOnHomePage()[pri:4, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="SearchPropertyOnHomePage" duration-ms="130185" started-at="2019-02-12T09:26:09Z" finished-at="2019-02-12T09:28:19Z">
+        <test-method status="PASS" signature="CreateNewProperty(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="CreateNewProperty" duration-ms="15296" started-at="2019-02-14T07:13:47Z" data-provider="TC87_Data" finished-at="2019-02-14T07:14:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Mana Apartments 1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[launch]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[New Launches of vilas, apartments, flats]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Mana Property]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[best]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- SearchPropertyOnHomePage -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E@42d80b78]" name="tearDown" is-config="true" duration-ms="1708" started-at="2019-02-12T09:28:19Z" finished-at="2019-02-12T09:28:21Z">
+        </test-method> <!-- CreateNewProperty -->
+        <test-method status="PASS" signature="CreateNewProperty(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="CreateNewProperty" duration-ms="14561" started-at="2019-02-14T07:14:03Z" data-provider="TC87_Data" finished-at="2019-02-14T07:14:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Brigade Apartments 1]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[post sale]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[New flats for sale]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Brigade Property]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[orion mall]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CreateNewProperty -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider@3bfdc050]" name="tearDown" is-config="true" duration-ms="1717" started-at="2019-02-14T07:14:17Z" finished-at="2019-02-14T07:14:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.training.functional.tests.TC88_CreatePropertyWithNewFeature_E2E -->
+      </class> <!-- com.training.functional.tests.TC87_CreatePropertyWithNewFeature_DataProvider -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

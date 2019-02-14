@@ -85,6 +85,7 @@ public class TC56_AddNewPost {
 		driver.switchTo().defaultContent();
 		Thread.sleep(2000);
 		postsPOM.clickOnPublishButton();
+		Thread.sleep(2000);
 		assertTrue(postsPOM.checkPostPublishedMessageDisplayed());
 		screenShot.captureScreenShot("TC56_4_Post published");
 		postsPOM.clickOnDashboardIcon();

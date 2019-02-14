@@ -112,6 +112,7 @@ public class TC89_CreatePropertyWithNewRegion_DataProvider {
 		driver.switchTo().defaultContent();
 		Thread.sleep(3000);
 		propertiesPOM.clickOnPublishButton();
+		Thread.sleep(3000);
 		screenShot.captureScreenShot("TC89_7_property Added");
 		assertTrue(propertiesPOM.checkPropertyPublishedMessageDisplayed());
 	}

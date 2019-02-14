@@ -116,6 +116,7 @@ public class TC90_AddNewPropertyWithAllDetails_DataProvider {
 		driver.switchTo().defaultContent();
 		Thread.sleep(3000);
 		propertiesPOM.clickOnPublishButton();
+		Thread.sleep(3000);
 		assertTrue(propertiesPOM.checkPropertyPublishedMessageDisplayed());
 		screenShot.captureScreenShot("TC90_9_Property Published");
 	}
